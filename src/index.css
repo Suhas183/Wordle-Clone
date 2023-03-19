@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.letter--normal{
+    @apply w-[43px] h-[58px] mr-[6px] rounded font-extrabold font-franklin text-lg
+}
+
+.letter--row2, .letter--row3{
+    @apply w-[43.6px] h-[58px] mr-[6px] rounded font-extrabold font-franklin text-lg
+}
+
+.letter--special{
+    @apply w-[65.4px] h-[58px] bg-[#D3D6DA] mr-[6px] rounded font-semibold font-franklin text-sm
+}
+
+.notSelected{
+    @apply w-[52px] h-[52.5px] border-2 border-gray-300 flex justify-center items-center text-3xl font-bold
+}
+
+.Selected{
+    @apply w-[52px] h-[52.5px] border-2 border-gray-500 flex justify-center items-center text-3xl font-bold
+}
