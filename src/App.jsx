@@ -43,8 +43,6 @@ function App() {
   const [gameWon,setGameWon] = React.useState(false)
   const [gameOver, setGameOver] = React.useState(false)
 
-  console.log(trueWord)
-
   React.useEffect(function() {
                   fetch("https://random-word-api.herokuapp.com/word?length=5")
                   .then(res => res.json())
@@ -172,7 +170,6 @@ function App() {
           for(let i = 1; i <= 5; i++)
           {
             index = trueWord.indexOf(guessWord[i-1])
-            console.log(index)
 
             if(index === -1)
             {
@@ -240,13 +237,16 @@ function App() {
                 }  
             }
         }
-        setGuessWord("")
-        setLastBox(false)
-        setRow(prevRow => prevRow + 1)
-        setCol(1)
-    
-        if(row === 7)
+        
+        if(row <= 5)
         {
+          setRow(prevRow => prevRow + 1)
+          setGuessWord("")
+          setLastBox(false)
+          setCol(1)
+        }
+
+        else{
           setGameOver(true)
           alert(`Game Over!! You LOST\nThe correct word is ${trueWord}`)
         }
@@ -276,6 +276,8 @@ function App() {
     setGameWon(false)
     setGameOver(false)
   }
+
+  console.log(row)
 
   return (
   
